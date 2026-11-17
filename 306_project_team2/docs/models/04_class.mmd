@@ -1,0 +1,95 @@
+---
+title: Class diagram - Campus Technology Help Desk System (Technician = service staff)
+---
+classDiagram
+  direction LR
+  class User {
+    +userId: str
+    +name: str
+    +role: Role
+  }
+  class Role {
+    <<enumeration>>
+    REQUESTER
+    COORDINATOR
+    TECHNICIAN
+  }
+  class Request {
+    +requestId: str
+    +title: str
+    +description: str
+    +location: str
+    +requestedUrgency: Priority
+    +priority: Priority
+    +status: Status
+    +createdAt: datetime
+    +updatedAt: datetime
+    +changeStatus(newStatus, actor)
+    +assign(technician, actor)
+    +isOpen() bool
+  }
+  class Category {
+    +categoryId: str
+    +name: str
+  }
+  class Priority {
+    <<enumeration>>
+    LOW
+    MEDIUM
+    HIGH
+    URGENT
+  }
+  class Status {
+    <<enumeration>>
+    SUBMITTED
+    REVIEWED
+    ASSIGNED
+    IN_PROGRESS
+    WAITING
+    RESOLVED
+    CLOSED
+    CANCELLED
+  }
+  class Assignment {
+    +technicianId: str
+    +assignedBy: str
+    +assignedAt: datetime
+  }
+  class Note {
+    +noteId: str
+    +text: str
+    +type: NoteType
+    +createdAt: datetime
+    +isVisibleTo(user) bool
+  }
+  class NoteType {
+    <<enumeration>>
+    WORK
+    ADMIN
+    RESOLUTION
+  }
+  class StatusChange {
+    +fromStatus: Status
+    +toStatus: Status
+    +changedBy: str
+    +changedAt: datetime
+  }
+  class ReportService {
+    <<service>>
+    +countOpenClosed() dict
+    +countByCategory() dict
+    +countByPriority() dict
+    +countByTechnician() dict
+  }
+  User "1" --> "0..*" Request : submits
+  Request "0..*" --> "1" Category : classified as
+  Request "1" *-- "0..1" Assignment : current assignment
+  Assignment "0..*" --> "1" User : technician
+  Request "1" *-- "0..*" Note : has
+  Note "0..*" --> "1" User : written by
+  Request "1" *-- "0..*" StatusChange : history
+  User ..> Role
+  Request ..> Status
+  Request ..> Priority
+  Note ..> NoteType
+  ReportService ..> Request : counts

@@ -1,0 +1,37 @@
+---
+title: Sequence diagram - Coordinator assigns a request
+---
+sequenceDiagram
+  autonumber
+  actor C as Coordinator
+  participant UI as Console UI
+  participant RS as RequestService
+  participant PP as PermissionPolicy
+  participant SR as StatusRules
+  participant Repo as RequestRepository
+  C->>UI: choose request R-0012 and technician T-02
+  UI->>RS: assign("R-0012", "T-02", currentUser)
+  RS->>PP: can(currentUser, "assign")
+  alt user is not Coordinator
+    PP-->>RS: false
+    RS-->>UI: PermissionError("Only coordinators can assign")
+    UI-->>C: show refusal, nothing changed
+  else user is Coordinator
+    PP-->>RS: true
+    RS->>Repo: get("R-0012")
+    Repo-->>RS: request (status = Reviewed)
+    RS->>SR: canTransition(Reviewed, Assigned, Coordinator)
+    alt transition not allowed (e.g. still Submitted)
+      SR-->>RS: false
+      RS-->>UI: TransitionError("Request must be reviewed first")
+      UI-->>C: show refusal, nothing changed
+    else transition allowed
+      SR-->>RS: true
+      RS->>RS: set assignment (T-02, by, time) and status = Assigned
+      RS->>RS: add StatusChange to history
+      RS->>Repo: save(request)
+      Repo-->>RS: ok
+      RS-->>UI: updated request
+      UI-->>C: "R-0012 assigned to T-02"
+    end
+  end

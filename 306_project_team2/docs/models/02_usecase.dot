@@ -1,0 +1,35 @@
+graph UseCase {
+  graph [fontname="Helvetica", splines=line, pad=0.4, label="Use-case diagram - Campus Technology Help Desk System", labelloc=t, fontsize=16];
+  node [fontname="Helvetica", fontsize=12, fixedsize=true];
+  edge [color="#444444", fontname="Helvetica", fontsize=10];
+
+  Boundary [shape=box, style=rounded, color="#555555", width=7.6, height=13.0, pos="6,6.6!", label="Campus Technology Help Desk System", labelloc=t, fontsize=13];
+
+  Requester [shape=box, width=1.3, height=0.6, label="«actor»\nRequester", pos="0,10.2!"];
+  Coordinator [shape=box, width=1.3, height=0.6, label="«actor»\nCoordinator", pos="0,3.4!"];
+  Technician [shape=box, width=1.3, height=0.6, label="«actor»\nTechnician", pos="12,9.4!"];
+
+  node [shape=ellipse, width=2.5, height=0.65];
+  Submit [label="Submit request", pos="4,11.4!"];
+  Track [label="Track status and\nresolution", pos="4,10.4!"];
+  CancelOwn [label="Cancel own request", pos="4,9.4!"];
+  View [label="View requests\n(filtered by role)", pos="4,7.4!"];
+  Review [label="Review request", pos="4,5.3!"];
+  Assign [label="Assign request", pos="4,4.4!"];
+  AdminNote [label="Add admin note", pos="4,3.5!"];
+  Close [label="Close or cancel request", pos="4,2.6!"];
+  Search [label="Search / filter requests", pos="4,1.7!"];
+  Report [label="View activity summary", pos="4,0.8!"];
+  Resolve [label="Resolve request\n(with resolution note)", pos="8,12.0!"];
+  Update [label="Update request status", pos="8,10.9!"];
+  WorkNote [label="Add work note", pos="8,9.9!"];
+  Classify [label="Set category\nand priority", pos="8,5.3!"];
+
+  Requester -- Submit; Requester -- Track; Requester -- CancelOwn; Requester -- View;
+  Coordinator -- View; Coordinator -- Review; Coordinator -- Assign; Coordinator -- AdminNote; Coordinator -- Close; Coordinator -- Search; Coordinator -- Report;
+  Technician -- Update; Technician -- WorkNote; Technician -- View;
+
+  edge [style=dashed, dir=forward, arrowhead=vee, fontcolor="#333333"];
+  Review -- Classify [label="«include»"];
+  Resolve -- Update [label="«extend»"];
+}
