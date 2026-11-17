@@ -1,0 +1,318 @@
+[
+  {
+    "request_id": "R-0001",
+    "title": "Lab PC won't boot",
+    "description": "PC 14 shows a black screen after the logo.",
+    "location": "Science Bldg, Room 110, PC 14",
+    "category": "Hardware",
+    "requested_urgency": "High",
+    "priority": "High",
+    "status": "Submitted",
+    "requester_id": "U-101",
+    "created_at": "2026-11-16T09:00:00",
+    "updated_at": "2026-11-16T09:00:00",
+    "assignment": null,
+    "history": [
+      {
+        "from_status": null,
+        "to_status": "Submitted",
+        "changed_by": "U-101",
+        "changed_at": "2026-11-16T09:00:00"
+      }
+    ]
+  },
+  {
+    "request_id": "R-0002",
+    "title": "Projector has no signal",
+    "description": "Ceiling projector says no input from the podium PC.",
+    "location": "Library, Room 204",
+    "category": "Classroom AV",
+    "requested_urgency": "Urgent",
+    "priority": "Urgent",
+    "status": "Reviewed",
+    "requester_id": "U-102",
+    "created_at": "2026-11-16T08:30:00",
+    "updated_at": "2026-11-16T08:45:00",
+    "assignment": null,
+    "history": [
+      {
+        "from_status": null,
+        "to_status": "Submitted",
+        "changed_by": "U-102",
+        "changed_at": "2026-11-16T08:30:00"
+      },
+      {
+        "from_status": "Submitted",
+        "to_status": "Reviewed",
+        "changed_by": "C-01",
+        "changed_at": "2026-11-16T08:45:00"
+      }
+    ]
+  },
+  {
+    "request_id": "R-0003",
+    "title": "Wi-Fi drops every few minutes",
+    "description": "Campus Wi-Fi disconnects on all devices in the lounge.",
+    "location": "Student Center, 2nd floor lounge",
+    "category": "Network/Wi-Fi",
+    "requested_urgency": "Medium",
+    "priority": "High",
+    "status": "Assigned",
+    "requester_id": "U-103",
+    "created_at": "2026-11-15T14:10:00",
+    "updated_at": "2026-11-15T14:35:00",
+    "assignment": {
+      "technician_id": "T-01",
+      "assigned_by": "C-01",
+      "assigned_at": "2026-11-15T14:35:00"
+    },
+    "history": [
+      {
+        "from_status": null,
+        "to_status": "Submitted",
+        "changed_by": "U-103",
+        "changed_at": "2026-11-15T14:10:00"
+      },
+      {
+        "from_status": "Submitted",
+        "to_status": "Reviewed",
+        "changed_by": "C-01",
+        "changed_at": "2026-11-15T14:30:00"
+      },
+      {
+        "from_status": "Reviewed",
+        "to_status": "Assigned",
+        "changed_by": "C-01",
+        "changed_at": "2026-11-15T14:35:00"
+      }
+    ]
+  },
+  {
+    "request_id": "R-0004",
+    "title": "Need statistics software installed",
+    "description": "Course requires the stats package on lab PCs.",
+    "location": "Math Bldg, Room 301",
+    "category": "Software",
+    "requested_urgency": "Low",
+    "priority": "Medium",
+    "status": "In Progress",
+    "requester_id": "U-101",
+    "created_at": "2026-11-14T10:00:00",
+    "updated_at": "2026-11-14T13:00:00",
+    "assignment": {
+      "technician_id": "T-02",
+      "assigned_by": "C-01",
+      "assigned_at": "2026-11-14T10:25:00"
+    },
+    "history": [
+      {
+        "from_status": null,
+        "to_status": "Submitted",
+        "changed_by": "U-101",
+        "changed_at": "2026-11-14T10:00:00"
+      },
+      {
+        "from_status": "Submitted",
+        "to_status": "Reviewed",
+        "changed_by": "C-01",
+        "changed_at": "2026-11-14T10:20:00"
+      },
+      {
+        "from_status": "Reviewed",
+        "to_status": "Assigned",
+        "changed_by": "C-01",
+        "changed_at": "2026-11-14T10:25:00"
+      },
+      {
+        "from_status": "Assigned",
+        "to_status": "In Progress",
+        "changed_by": "T-02",
+        "changed_at": "2026-11-14T13:00:00"
+      }
+    ]
+  },
+  {
+    "request_id": "R-0005",
+    "title": "Printer jammed",
+    "description": "Printer in the hallway jams on every page.",
+    "location": "Business Bldg, 1st floor hallway",
+    "category": "Hardware",
+    "requested_urgency": "Medium",
+    "priority": "Medium",
+    "status": "Waiting",
+    "requester_id": "U-102",
+    "created_at": "2026-11-13T11:00:00",
+    "updated_at": "2026-11-13T15:00:00",
+    "assignment": {
+      "technician_id": "T-03",
+      "assigned_by": "C-01",
+      "assigned_at": "2026-11-13T11:20:00"
+    },
+    "history": [
+      {
+        "from_status": null,
+        "to_status": "Submitted",
+        "changed_by": "U-102",
+        "changed_at": "2026-11-13T11:00:00"
+      },
+      {
+        "from_status": "Submitted",
+        "to_status": "Reviewed",
+        "changed_by": "C-01",
+        "changed_at": "2026-11-13T11:15:00"
+      },
+      {
+        "from_status": "Reviewed",
+        "to_status": "Assigned",
+        "changed_by": "C-01",
+        "changed_at": "2026-11-13T11:20:00"
+      },
+      {
+        "from_status": "Assigned",
+        "to_status": "In Progress",
+        "changed_by": "T-03",
+        "changed_at": "2026-11-13T13:00:00"
+      },
+      {
+        "from_status": "In Progress",
+        "to_status": "Waiting",
+        "changed_by": "T-03",
+        "changed_at": "2026-11-13T15:00:00"
+      }
+    ]
+  },
+  {
+    "request_id": "R-0006",
+    "title": "Can't log in to lab account",
+    "description": "Password reset link never arrives.",
+    "location": "Remote",
+    "category": "Account/Access",
+    "requested_urgency": "High",
+    "priority": "High",
+    "status": "Resolved",
+    "requester_id": "U-103",
+    "created_at": "2026-11-12T09:00:00",
+    "updated_at": "2026-11-12T10:00:00",
+    "assignment": {
+      "technician_id": "T-01",
+      "assigned_by": "C-01",
+      "assigned_at": "2026-11-12T09:12:00"
+    },
+    "history": [
+      {
+        "from_status": null,
+        "to_status": "Submitted",
+        "changed_by": "U-103",
+        "changed_at": "2026-11-12T09:00:00"
+      },
+      {
+        "from_status": "Submitted",
+        "to_status": "Reviewed",
+        "changed_by": "C-01",
+        "changed_at": "2026-11-12T09:10:00"
+      },
+      {
+        "from_status": "Reviewed",
+        "to_status": "Assigned",
+        "changed_by": "C-01",
+        "changed_at": "2026-11-12T09:12:00"
+      },
+      {
+        "from_status": "Assigned",
+        "to_status": "In Progress",
+        "changed_by": "T-01",
+        "changed_at": "2026-11-12T09:30:00"
+      },
+      {
+        "from_status": "In Progress",
+        "to_status": "Resolved",
+        "changed_by": "T-01",
+        "changed_at": "2026-11-12T10:00:00"
+      }
+    ]
+  },
+  {
+    "request_id": "R-0007",
+    "title": "Speakers crackle",
+    "description": "Room speakers crackle during lectures.",
+    "location": "Arts Bldg, Room 120",
+    "category": "Classroom AV",
+    "requested_urgency": "Low",
+    "priority": "Low",
+    "status": "Closed",
+    "requester_id": "U-101",
+    "created_at": "2026-11-10T09:00:00",
+    "updated_at": "2026-11-10T16:00:00",
+    "assignment": {
+      "technician_id": "T-02",
+      "assigned_by": "C-01",
+      "assigned_at": "2026-11-10T09:25:00"
+    },
+    "history": [
+      {
+        "from_status": null,
+        "to_status": "Submitted",
+        "changed_by": "U-101",
+        "changed_at": "2026-11-10T09:00:00"
+      },
+      {
+        "from_status": "Submitted",
+        "to_status": "Reviewed",
+        "changed_by": "C-01",
+        "changed_at": "2026-11-10T09:20:00"
+      },
+      {
+        "from_status": "Reviewed",
+        "to_status": "Assigned",
+        "changed_by": "C-01",
+        "changed_at": "2026-11-10T09:25:00"
+      },
+      {
+        "from_status": "Assigned",
+        "to_status": "In Progress",
+        "changed_by": "T-02",
+        "changed_at": "2026-11-10T11:00:00"
+      },
+      {
+        "from_status": "In Progress",
+        "to_status": "Resolved",
+        "changed_by": "T-02",
+        "changed_at": "2026-11-10T12:00:00"
+      },
+      {
+        "from_status": "Resolved",
+        "to_status": "Closed",
+        "changed_by": "C-01",
+        "changed_at": "2026-11-10T16:00:00"
+      }
+    ]
+  },
+  {
+    "request_id": "R-0008",
+    "title": "Duplicate: Wi-Fi in lounge",
+    "description": "Same issue as R-0003.",
+    "location": "Student Center, 2nd floor lounge",
+    "category": "Network/Wi-Fi",
+    "requested_urgency": "Medium",
+    "priority": "Medium",
+    "status": "Cancelled",
+    "requester_id": "U-102",
+    "created_at": "2026-11-15T15:00:00",
+    "updated_at": "2026-11-15T15:30:00",
+    "assignment": null,
+    "history": [
+      {
+        "from_status": null,
+        "to_status": "Submitted",
+        "changed_by": "U-102",
+        "changed_at": "2026-11-15T15:00:00"
+      },
+      {
+        "from_status": "Submitted",
+        "to_status": "Cancelled",
+        "changed_by": "C-01",
+        "changed_at": "2026-11-15T15:30:00"
+      }
+    ]
+  }
+]

@@ -1,0 +1,34 @@
+---
+title: Activity diagram - Request submission and triage
+---
+flowchart TB
+  start((Start))
+  subgraph REQ[Requester]
+    A1[Select Requester role]
+    A2[Fill in title, description,<br/>location, category, urgency]
+    A3[Submit request]
+  end
+  subgraph SYS[System]
+    D1{All required fields present<br/>and within length limits?}
+    E1[Show which fields<br/>are missing or too long]
+    S1[Save request with new ID,<br/>status = Submitted]
+    S3[Status = Reviewed]
+    S4[Record technician,<br/>status = Assigned]
+    S5[Status = Cancelled]
+  end
+  subgraph COO[Coordinator]
+    R1[Open new Submitted request]
+    D2{Valid IT request?<br/>Not a duplicate?}
+    C1[Add admin note explaining why]
+    C2[Cancel request]
+    R2[Set category and priority]
+    R3[Mark as reviewed]
+    G1[Choose technician]
+    G2[Assign request]
+  end
+  fin((End))
+  start --> A1 --> A2 --> A3 --> D1
+  D1 -- No --> E1 --> A2
+  D1 -- Yes --> S1 --> R1 --> D2
+  D2 -- No --> C1 --> C2 --> S5 --> fin
+  D2 -- Yes --> R2 --> R3 --> S3 --> G1 --> G2 --> S4 --> fin

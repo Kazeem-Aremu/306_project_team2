@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Campus Tech Help Desk</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="mark" aria-hidden="true">HD</span><span>Campus Tech Help Desk</span></div>
+  <div id="who" class="who" hidden>
+    <span id="who-name"></span><span id="who-role" class="role-chip"></span>
+    <button id="switch" type="button" class="btn ghost">Switch user</button>
+  </div>
+</header>
+
+<main id="login" class="login">
+  <h1>Who are you?</h1>
+  <p class="muted">Prototype with simulated users. Pick a role, then a sample user.</p>
+  <div id="roles" class="roles"></div>
+  <div id="people" class="people" hidden></div>
+</main>
+
+<div id="app" class="app" hidden>
+  <nav id="tabs" class="tabs" aria-label="Sections"></nav>
+  <section class="content">
+    <div id="banner" class="banner" role="alert" hidden></div>
+    <div id="view"></div>
+  </section>
+</div>
+<div id="toast" class="toast" role="status" hidden></div>
+<script src="/app.js"></script>
+</body>
+</html>

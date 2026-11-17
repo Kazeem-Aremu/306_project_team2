@@ -1,0 +1,18 @@
+digraph Context {
+  graph [rankdir=LR, fontname="Helvetica", fontsize=12, pad=0.4, nodesep=0.6, ranksep=1.4, label="Context diagram - Campus Technology Help Desk System", labelloc=t, fontsize=16];
+  node [fontname="Helvetica", fontsize=12];
+  edge [fontname="Helvetica", fontsize=10, color="#444444"];
+  Requester [shape=box, style="rounded", label="Requester\n(student, faculty, staff)"];
+  Coordinator [shape=box, style="rounded", label="Help-desk\nCoordinator"];
+  Technician [shape=box, style="rounded", label="Technician"];
+  Admin [shape=box, style="rounded,dashed", fontcolor="#777777", color="#999999", label="Admin\n(optional - out of scope)"];
+  System [shape=circle, style=filled, fillcolor="#E7F1FB", label="Campus\nTechnology\nHelp Desk\nSystem", width=2.2, fixedsize=true];
+  Requester -> System [label="new request, cancel own request"];
+  System -> Requester [label="request ID, status,\nresolution note"];
+  Coordinator -> System [label="review, category, priority,\nassignment, close/cancel,\nadmin notes, filters"];
+  System -> Coordinator [label="all requests, search results,\nactivity summary"];
+  Technician -> System [label="status updates,\nwork and resolution notes"];
+  System -> Technician [label="assigned requests"];
+  Admin -> System [style=dashed, color="#999999", fontcolor="#777777", label="categories, users (fixed in sample data)"];
+  {rank=same; Requester; Coordinator; Technician; Admin}
+}
